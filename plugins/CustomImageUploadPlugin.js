@@ -41,6 +41,7 @@ export default class CustomImageUpload extends Plugin {
 									editor.model.change( writer => {
 										const imageElement = writer.createElement( 'image', {	src: reader.result,	} );
 										editor.model.insertContent( imageElement, editor.model.document.selection );
+										editor.editing.view.document.fire('fileUpload');
 									} );
 
 									$( '#image-upload' ).remove();
